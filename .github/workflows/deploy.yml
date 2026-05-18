@@ -1,0 +1,10 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: ahessedenz/godot-ci/.github/workflows/build-web.yml@main
+    secrets: inherit
