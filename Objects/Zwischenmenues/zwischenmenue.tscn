@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx4xgkk8mxesh"]
+
+[ext_resource type="PackedScene" uid="uid://c46kp5kbxr0hl" path="res://Objects/Strukturobjekte/Hintergrund/hintergrund.tscn" id="1_fgkor"]
+[ext_resource type="Script" path="res://Objects/Zwischenmenues/zwischenmenue.gd" id="1_x6dt6"]
+[ext_resource type="Texture2D" uid="uid://ckn5mp7g83pm0" path="res://Assets/Buttons/Button_zurueck.png" id="2_2rt1e"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="2_lxw43"]
+
+[node name="Zwischenmenue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6dt6")
+
+[node name="Hintergrund" parent="." instance=ExtResource("1_fgkor")]
+layout_mode = 0
+
+[node name="Ueberschrift" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 150.0
+offset_right = 2009.0
+offset_bottom = 258.0
+theme = ExtResource("2_lxw43")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZurueckButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 46.0
+offset_right = 200.0
+offset_bottom = 206.0
+focus_mode = 0
+icon = ExtResource("2_2rt1e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="ZurueckButton" to="." method="_on_zurueck_button_pressed"]

@@ -1,0 +1,200 @@
+[gd_scene load_steps=8 format=3 uid="uid://1v518jefqwb7"]
+
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/AufgabenButtons/zug_button.gd" id="1_7ghg7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iype6"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6f6m"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tttmy"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adxme"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tskqh"]
+bg_color = Color(0.172549, 0.611765, 0.211765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcjst"]
+size = Vector2(150, 150)
+
+[node name="ZugButton" type="Button"]
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_iype6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c6f6m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tttmy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_adxme")
+script = ExtResource("1_7ghg7")
+
+[node name="Kaesten" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 2
+
+[node name="K1" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 82.0
+offset_right = 34.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K2" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 82.0
+offset_right = 65.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K3" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 82.0
+offset_right = 96.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K4" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 82.0
+offset_right = 127.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K5" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 82.0
+offset_right = 158.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K6" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 51.0
+offset_right = 34.0
+offset_bottom = 84.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K7" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 51.0
+offset_right = 65.0
+offset_bottom = 84.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K8" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 51.0
+offset_right = 96.0
+offset_bottom = 84.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K9" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 51.0
+offset_right = 127.0
+offset_bottom = 84.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="K10" type="Label" parent="Kaesten"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 51.0
+offset_right = 158.0
+offset_bottom = 84.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tskqh")
+
+[node name="Striche" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="K1" type="Line2D" parent="Striche"]
+points = PackedVector2Array(0, 116, 35, 81)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K2" type="Line2D" parent="Striche"]
+points = PackedVector2Array(31, 116, 66, 81)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K3" type="Line2D" parent="Striche"]
+points = PackedVector2Array(62, 116, 97, 81)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K4" type="Line2D" parent="Striche"]
+points = PackedVector2Array(93, 116, 128, 81)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K5" type="Line2D" parent="Striche"]
+points = PackedVector2Array(124, 116, 159, 81)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K6" type="Line2D" parent="Striche"]
+points = PackedVector2Array(0, 85, 35, 50)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K7" type="Line2D" parent="Striche"]
+points = PackedVector2Array(31, 85, 66, 50)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K8" type="Line2D" parent="Striche"]
+points = PackedVector2Array(62, 85, 97, 50)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K9" type="Line2D" parent="Striche"]
+points = PackedVector2Array(93, 85, 128, 50)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="K10" type="Line2D" parent="Striche"]
+points = PackedVector2Array(124, 85, 159, 50)
+width = 5.0
+default_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="Area2D" type="Area2D" parent="." groups=["Button"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80, 80)
+shape = SubResource("RectangleShape2D_gcjst")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

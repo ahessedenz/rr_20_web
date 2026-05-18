@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://8y8sbv85ge3i"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xgkk8mxesh" path="res://Objects/Zwischenmenues/zwischenmenue.tscn" id="1_e6n8e"]
+[ext_resource type="Texture2D" uid="uid://dxywsheytdq0g" path="res://Assets/Background/Lachstern.png" id="2_53al8"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_ywwbw"]
+[ext_resource type="PackedScene" uid="uid://kca7gh7hqrhx" path="res://Objects/Popups/popup_von_2_zu_1zu.tscn" id="3_5ay51"]
+[ext_resource type="Texture2D" uid="uid://cha7kq45oex36" path="res://Assets/Background/UfoMann.png" id="3_kppno"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="4_iwhm8"]
+[ext_resource type="PackedScene" uid="uid://b8hwau5v7xug8" path="res://Objects/Popups/popup_zehnerunterschreitung_ein_schritt.tscn" id="4_olbs8"]
+
+[node name="zw_Zehnerunterschreitung_ein_Schritt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Zwischenmenue" parent="." instance=ExtResource("1_e6n8e")]
+layout_mode = 1
+titel = "Unter den Zehner in einem Schritt"
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lachstern" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("2_53al8")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="Ufo" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 250.0
+offset_right = 1850.0
+offset_bottom = 500.0
+texture = ExtResource("3_kppno")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1250.0
+offset_right = 470.0
+offset_bottom = 1320.0
+texture = ExtResource("4_iwhm8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 800.0
+offset_right = 1850.0
+offset_bottom = 850.0
+texture = ExtResource("4_iwhm8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_ywwbw")]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 550.0
+offset_right = 999.0
+offset_bottom = 1124.0
+string = "Von zwei|zu einem|Schritt unter|den Zehner"
+seitenzahlen = "S. 45"
+link = ExtResource("3_5ay51")
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_ywwbw")]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 550.0
+offset_right = 1509.0
+offset_bottom = 1124.0
+string = "In einem|Schritt unter|den Zehner"
+seitenzahlen = "S. 46 - 47"
+link = ExtResource("4_olbs8")

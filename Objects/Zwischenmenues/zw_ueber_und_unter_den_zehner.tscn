@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3y3v6b3qf4hl"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xgkk8mxesh" path="res://Objects/Zwischenmenues/zwischenmenue.tscn" id="1_0v0tb"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_byabh"]
+[ext_resource type="Texture2D" uid="uid://bxaft8epjc82d" path="res://Assets/Background/Ufo1.png" id="2_e2j7j"]
+[ext_resource type="PackedScene" uid="uid://cpc1bwip4wva" path="res://Objects/Popups/popup_sachrechnen.tscn" id="3_ai30j"]
+[ext_resource type="Texture2D" uid="uid://c8jj0xvuvnhbx" path="res://Assets/Background/WinkeAlien.png" id="3_m4lji"]
+[ext_resource type="PackedScene" uid="uid://bfiis15c6ye4o" path="res://Objects/Popups/popup_ueber_unter.tscn" id="3_ue8rn"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="4_h70rv"]
+[ext_resource type="PackedScene" uid="uid://5j1e40sj80sc" path="res://Objects/Popups/popup_kettenaufgaben.tscn" id="5_ybr6b"]
+
+[node name="zw_ueber_und_unter_den_Zehner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Zwischenmenue" parent="." instance=ExtResource("1_0v0tb")]
+layout_mode = 1
+titel = "Sachrechnen und Üben"
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ufo" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 500.0
+texture = ExtResource("2_e2j7j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Winkemann" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1650.0
+offset_top = 200.0
+offset_right = 1850.0
+offset_bottom = 450.0
+texture = ExtResource("3_m4lji")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1250.0
+offset_right = 470.0
+offset_bottom = 1320.0
+texture = ExtResource("4_h70rv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1850.0
+offset_top = 800.0
+offset_right = 1900.0
+offset_bottom = 850.0
+texture = ExtResource("4_h70rv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_byabh")]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 550.0
+offset_right = 744.0
+offset_bottom = 1124.0
+string = "Sachrechnen"
+seitenzahlen = "S. 21 / S. 50"
+link = ExtResource("3_ai30j")
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_byabh")]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 550.0
+offset_right = 1254.0
+offset_bottom = 1124.0
+string = "Über und|unter den|Zehner"
+seitenzahlen = "S. 48 - 49"
+link = ExtResource("3_ue8rn")
+
+[node name="MenuButton3" parent="." instance=ExtResource("2_byabh")]
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 550.0
+offset_right = 1764.0
+offset_bottom = 1124.0
+string = "Kettenaufgaben"
+seitenzahlen = "S. 53 - 55"
+link = ExtResource("5_ybr6b")

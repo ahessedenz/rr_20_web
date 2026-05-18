@@ -1,0 +1,316 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnybdvvs24eyb"]
+
+[ext_resource type="Script" path="res://Objects/Aufgaben/Sachrechnen/sachrechnen_2.gd" id="1_5p0au"]
+[ext_resource type="PackedScene" uid="uid://dqgngdmxtt1bg" path="res://Objects/Strukturobjekte/Aufgaben_Grundgeruest/aufgaben_grundgeruest.tscn" id="2_4cv3k"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="3_4wt5o"]
+[ext_resource type="Texture2D" uid="uid://dubew0dct77l1" path="res://Assets/Sachrechnen/Eierkarton10/10erEierkarton_10.png" id="3_87qvc"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="4_ohbx4"]
+[ext_resource type="PackedScene" uid="uid://1jg2htq1b20n" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.tscn" id="5_hlro7"]
+[ext_resource type="PackedScene" uid="uid://buu06p22q283l" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld_rechenzeichen.tscn" id="6_slqqr"]
+[ext_resource type="PackedScene" uid="uid://bewngadi2qv8m" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.tscn" id="7_5m57t"]
+[ext_resource type="PackedScene" uid="uid://bjk0q666c4yie" path="res://Objects/Strukturobjekte/AufgabenButtons/rechenzeichen_button.tscn" id="8_a2c6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4keo"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekwp2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Sachrechnen_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p0au")
+
+[node name="Aufgaben_Grundgeruest" parent="." instance=ExtResource("2_4cv3k")]
+layout_mode = 1
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+offset_left = 100.0
+offset_top = 331.0
+offset_right = 184.0
+offset_bottom = 422.0
+texture = ExtResource("3_4wt5o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+offset_left = 1850.0
+offset_top = 900.0
+offset_right = 1910.0
+offset_bottom = 960.0
+texture = ExtResource("3_4wt5o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AufgabenPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 325.0
+offset_right = 1774.0
+offset_bottom = 1035.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4keo")
+
+[node name="PanelLinks" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 685.0
+offset_bottom = 300.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekwp2")
+
+[node name="Z" type="TextureRect" parent="AufgabenPanel/PanelLinks"]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 325.0
+offset_bottom = 250.0
+texture = ExtResource("3_87qvc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="E" type="TextureRect" parent="AufgabenPanel/PanelLinks"]
+layout_mode = 0
+offset_left = 335.0
+offset_right = 635.0
+offset_bottom = 250.0
+texture = ExtResource("3_87qvc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fragezeichen" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 60.0
+offset_right = 816.0
+offset_bottom = 310.0
+theme = ExtResource("4_ohbx4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 150
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelRechts" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 50.0
+offset_right = 1476.0
+offset_bottom = 300.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekwp2")
+
+[node name="Z" type="TextureRect" parent="AufgabenPanel/PanelRechts"]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 325.0
+offset_bottom = 250.0
+texture = ExtResource("3_87qvc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="E" type="TextureRect" parent="AufgabenPanel/PanelRechts"]
+layout_mode = 0
+offset_left = 335.0
+offset_right = 635.0
+offset_bottom = 250.0
+texture = ExtResource("3_87qvc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Eingabefeld_Zahl1" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("5_hlro7")]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 400.0
+offset_right = 421.0
+offset_bottom = 560.0
+laenge = 2
+next = NodePath("../Eingabefeld_Ergebnis")
+aktualisiere_Anzeige = true
+
+[node name="Eingabefeld_Rechenzeichen" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("6_slqqr")]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 417.0
+offset_right = 622.0
+offset_bottom = 542.0
+next = NodePath("../Eingabefeld_Zahl2")
+aktualisiere_Anzeige = true
+
+[node name="Eingabefeld_Zahl2" parent="AufgabenPanel" instance=ExtResource("5_hlro7")]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 400.0
+offset_right = 830.0
+offset_bottom = 560.0
+laenge = 1
+
+[node name="Gleichheitszeichen" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 415.0
+offset_right = 977.0
+offset_bottom = 575.0
+theme = ExtResource("4_ohbx4")
+theme_override_font_sizes/font_size = 120
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eingabefeld_Ergebnis" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("5_hlro7")]
+layout_mode = 0
+offset_left = 1051.0
+offset_top = 400.0
+offset_right = 1211.0
+offset_bottom = 560.0
+laenge = 2
+next = NodePath("../Eingabefeld_Rechenzeichen")
+aktualisiere_Anzeige = true
+
+[node name="Polygon2DLinks" type="Polygon2D" parent="AufgabenPanel"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(325, 300, 385, 300, 355, 355)
+
+[node name="Polygon2DRechts" type="Polygon2D" parent="AufgabenPanel"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1116, 300, 1176, 300, 1146, 355)
+
+[node name="Zahlbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ZahlButton0" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 1150.0
+offset_right = 239.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "10"
+
+[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 1150.0
+offset_right = 430.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "11"
+
+[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 1150.0
+offset_right = 621.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "12"
+
+[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 1150.0
+offset_right = 812.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "13"
+
+[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 1150.0
+offset_right = 1003.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "14"
+
+[node name="ZahlButton5" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 1150.0
+offset_right = 1194.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "15"
+
+[node name="ZahlButton6" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 1225.0
+offset_top = 1150.0
+offset_right = 1385.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "16"
+
+[node name="ZahlButton7" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 1416.0
+offset_top = 1150.0
+offset_right = 1576.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "17"
+
+[node name="ZahlButton8" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 1607.0
+offset_top = 1150.0
+offset_right = 1767.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "18"
+
+[node name="ZahlButton9" parent="Zahlbuttons" instance=ExtResource("7_5m57t")]
+layout_mode = 0
+offset_left = 1798.0
+offset_top = 1150.0
+offset_right = 1958.0
+offset_bottom = 1310.0
+scale = Vector2(0.9, 0.9)
+index = "19"
+
+[node name="Rechenzeichenbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rechenzeichen_Button1" parent="Rechenzeichenbuttons" instance=ExtResource("8_a2c6t")]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 1170.0
+offset_right = 994.0
+offset_bottom = 1290.0
+index = "+"
+
+[node name="Rechenzeichen_Button2" parent="Rechenzeichenbuttons" instance=ExtResource("8_a2c6t")]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 1170.0
+offset_right = 1174.0
+offset_bottom = 1290.0
+index = "-"

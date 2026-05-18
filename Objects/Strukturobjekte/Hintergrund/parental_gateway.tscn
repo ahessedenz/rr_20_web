@@ -1,0 +1,358 @@
+[gd_scene load_steps=13 format=3 uid="uid://cls0omoppqohq"]
+
+[ext_resource type="Texture2D" uid="uid://c35lipteoi31d" path="res://Assets/Hintergrund/Rahmen.png" id="1_lh2ep"]
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/Hintergrund/parental_gateway.gd" id="1_nubwq"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="2_ldjoc"]
+[ext_resource type="PackedScene" uid="uid://bewngadi2qv8m" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.tscn" id="3_aexu6"]
+[ext_resource type="Texture2D" uid="uid://ckn5mp7g83pm0" path="res://Assets/Buttons/Button_zurueck.png" id="4_rt4nj"]
+[ext_resource type="AudioStream" uid="uid://cbkasr8nixdj8" path="res://Assets/Sounds/LQ_Correct_Answer_03.wav" id="5_m7kol"]
+[ext_resource type="AudioStream" uid="uid://bkgbw53rnkrou" path="res://Assets/Sounds/LQ_Wrong_Answer_02.wav" id="6_ht3xx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6mjd"]
+bg_color = Color(1, 0.698039, 0.141176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuf3e"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u01m"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iygqc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq5g0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[node name="parentalGateway" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nubwq")
+
+[node name="background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="rahmen" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 1536.0
+texture = ExtResource("1_lh2ep")
+
+[node name="bgColor" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 44.0
+offset_right = 2010.0
+offset_bottom = 1494.0
+color = Color(0.690196, 0.87451, 1, 1)
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 2048.0
+offset_bottom = 244.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 80
+text = "Elternzugang"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Aufgabe" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 600.0
+offset_right = 1874.0
+offset_bottom = 900.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6mjd")
+
+[node name="zahl1" type="Label" parent="Aufgabe"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 75.0
+offset_right = 350.0
+offset_bottom = 227.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_yuf3e")
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="zahl2" type="Label" parent="Aufgabe"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 75.0
+offset_right = 900.0
+offset_bottom = 227.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_yuf3e")
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="plus" type="Label" parent="Aufgabe"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 75.0
+offset_right = 550.0
+offset_bottom = 227.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_2u01m")
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gleich" type="Label" parent="Aufgabe"]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 75.0
+offset_right = 1100.0
+offset_bottom = 227.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ergebnis" type="Control" parent="Aufgabe"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Aufgabe/Ergebnis"]
+layout_mode = 0
+offset_left = 1150.0
+offset_top = 70.0
+offset_right = 1650.0
+offset_bottom = 250.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_iygqc")
+
+[node name="GesamtT" type="Label" parent="Aufgabe/Ergebnis/Label"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 170.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vq5g0")
+
+[node name="Label" type="Label" parent="Aufgabe/Ergebnis/Label/GesamtT"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GesamtH" type="Label" parent="Aufgabe/Ergebnis/Label"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 170.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vq5g0")
+
+[node name="Label" type="Label" parent="Aufgabe/Ergebnis/Label/GesamtH"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GesamtZ" type="Label" parent="Aufgabe/Ergebnis/Label"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 10.0
+offset_right = 370.0
+offset_bottom = 170.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vq5g0")
+
+[node name="Label" type="Label" parent="Aufgabe/Ergebnis/Label/GesamtZ"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GesamtE" type="Label" parent="Aufgabe/Ergebnis/Label"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 10.0
+offset_right = 490.0
+offset_bottom = 170.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vq5g0")
+
+[node name="Label" type="Label" parent="Aufgabe/Ergebnis/Label/GesamtE"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+theme = ExtResource("2_ldjoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zahlbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ZahlButton0" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 1150.0
+offset_right = 271.0
+offset_bottom = 1310.0
+index = "0"
+
+[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 1150.0
+offset_right = 456.0
+offset_bottom = 1310.0
+index = "1"
+
+[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 1150.0
+offset_right = 641.0
+offset_bottom = 1310.0
+index = "2"
+
+[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 1150.0
+offset_right = 826.0
+offset_bottom = 1310.0
+index = "3"
+
+[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 1150.0
+offset_right = 1011.0
+offset_bottom = 1310.0
+index = "4"
+
+[node name="ZahlButton5" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 1150.0
+offset_right = 1196.0
+offset_bottom = 1310.0
+index = "5"
+
+[node name="ZahlButton6" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 1150.0
+offset_right = 1381.0
+offset_bottom = 1310.0
+index = "6"
+
+[node name="ZahlButton7" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 1406.0
+offset_top = 1150.0
+offset_right = 1566.0
+offset_bottom = 1310.0
+index = "7"
+
+[node name="ZahlButton8" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 1591.0
+offset_top = 1150.0
+offset_right = 1751.0
+offset_bottom = 1310.0
+index = "8"
+
+[node name="ZahlButton9" parent="Zahlbuttons" instance=ExtResource("3_aexu6")]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 1150.0
+offset_right = 1936.0
+offset_bottom = 1310.0
+index = "9"
+
+[node name="backButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 46.0
+offset_right = 200.0
+offset_bottom = 206.0
+focus_mode = 0
+icon = ExtResource("4_rt4nj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Soundeffekte" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Richtig" type="AudioStreamPlayer" parent="Soundeffekte"]
+stream = ExtResource("5_m7kol")
+
+[node name="Falsch" type="AudioStreamPlayer" parent="Soundeffekte"]
+stream = ExtResource("6_ht3xx")
+
+[connection signal="mouse_entered" from="Aufgabe/Ergebnis/Label/GesamtT" to="." method="_on_gesamt_t_mouse_entered"]
+[connection signal="mouse_exited" from="Aufgabe/Ergebnis/Label/GesamtT" to="." method="_on_gesamt_t_mouse_exited"]
+[connection signal="mouse_entered" from="Aufgabe/Ergebnis/Label/GesamtH" to="." method="_on_gesamt_h_mouse_entered"]
+[connection signal="mouse_exited" from="Aufgabe/Ergebnis/Label/GesamtH" to="." method="_on_gesamt_h_mouse_exited"]
+[connection signal="mouse_entered" from="Aufgabe/Ergebnis/Label/GesamtZ" to="." method="_on_gesamt_z_mouse_entered"]
+[connection signal="mouse_exited" from="Aufgabe/Ergebnis/Label/GesamtZ" to="." method="_on_gesamt_z_mouse_exited"]
+[connection signal="mouse_entered" from="Aufgabe/Ergebnis/Label/GesamtE" to="." method="_on_gesamt_e_mouse_entered"]
+[connection signal="mouse_exited" from="Aufgabe/Ergebnis/Label/GesamtE" to="." method="_on_gesamt_e_mouse_exited"]
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

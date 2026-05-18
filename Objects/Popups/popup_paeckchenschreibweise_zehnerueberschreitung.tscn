@@ -1,0 +1,1094 @@
+[gd_scene load_steps=16 format=3 uid="uid://bby5s7ddsqdva"]
+
+[ext_resource type="PackedScene" uid="uid://dnxnbh7jf2y4d" path="res://Objects/Popups/popup_hintergrund.tscn" id="1_cmr5s"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_ucyxx"]
+[ext_resource type="PackedScene" uid="uid://dxaa12yh3csvp" path="res://Objects/Aufgaben/Paeckchenschreibweise_Zehnerueberschreitung/paeckchenschreibweise_zehnerueberschreitung_1.tscn" id="3_vf1v3"]
+[ext_resource type="Texture2D" uid="uid://d4bxaydbfcjji" path="res://Assets/Mengen/Zug/Zug_7.png" id="4_rs08q"]
+[ext_resource type="PackedScene" uid="uid://bie26g23x6sp" path="res://Objects/Aufgaben/Paeckchenschreibweise_Zehnerueberschreitung/paeckchenschreibweise_zehnerueberschreitung_2.tscn" id="4_scj2i"]
+[ext_resource type="Texture2D" uid="uid://b323im567c017" path="res://Assets/Mengen/Zug/Zug_0.png" id="5_m440y"]
+[ext_resource type="PackedScene" uid="uid://csygoco4wfo0q" path="res://Objects/Aufgaben/Paeckchenschreibweise_Zehnerueberschreitung/paeckchenschreibweise_zehnerueberschreitung_3.tscn" id="5_w4e75"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="6_5w4i2"]
+[ext_resource type="Texture2D" uid="uid://bhbthfrepmsya" path="res://Assets/Mengen/Zug/Zug_9.png" id="8_6xx1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sq0xh"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfab0"]
+bg_color = Color(1, 0.87451, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm808"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v87wc"]
+bg_color = Color(1, 0.92549, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmeec"]
+bg_color = Color(1, 0.92549, 0.529412, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5dqu"]
+bg_color = Color(1, 0.92549, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Popup_Paeckchenschreibweise_Zehnerueberschreitung" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup_Hintergrund" parent="." instance=ExtResource("1_cmr5s")]
+layout_mode = 1
+titel = "Päckchenschreibweise zur ZÜ"
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_ucyxx")]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 350.0
+offset_right = 661.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+link = ExtResource("3_vf1v3")
+sterne = 1
+
+[node name="Mengenanzeige" type="Panel" parent="MenuButton1"]
+layout_mode = 0
+offset_left = 43.333
+offset_top = 35.0003
+offset_right = 1143.33
+offset_bottom = 335.0
+scale = Vector2(0.35, 0.35)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sq0xh")
+
+[node name="MengeZ" type="TextureRect" parent="MenuButton1/Mengenanzeige"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 35.0
+offset_right = 565.0
+offset_bottom = 285.0
+texture = ExtResource("4_rs08q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MengeE" type="TextureRect" parent="MenuButton1/Mengenanzeige"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 35.0
+offset_right = 1035.0
+offset_bottom = 285.0
+texture = ExtResource("5_m440y")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="MenuButton1"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 133.333
+offset_right = 405.0
+offset_bottom = 233.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfab0")
+
+[node name="Label1" type="Label" parent="MenuButton1/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton1/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton1/Panel"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton1/Panel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton1/Panel"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel2" type="Panel" parent="MenuButton1"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 233.333
+offset_right = 405.0
+offset_bottom = 333.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v87wc")
+
+[node name="Label1" type="Label" parent="MenuButton1/Panel2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel2/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton1/Panel2"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton1/Panel2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel2/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton1/Panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton1/Panel2"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel3" type="Panel" parent="MenuButton1"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 333.333
+offset_right = 405.0
+offset_bottom = 433.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmeec")
+
+[node name="Label1" type="Label" parent="MenuButton1/Panel3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel3/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 65.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton1/Panel3"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton1/Panel3"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton1/Panel3/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton1/Panel3"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton1/Panel3"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_ucyxx")]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 350.0
+offset_right = 987.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+string = "Rechne ohne|Beladen des|Rechenzuges"
+link = ExtResource("4_scj2i")
+sterne = 2
+
+[node name="Mengenanzeige" type="Panel" parent="MenuButton2"]
+layout_mode = 0
+offset_left = 43.333
+offset_top = 35.0003
+offset_right = 1143.33
+offset_bottom = 335.0
+scale = Vector2(0.35, 0.35)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sq0xh")
+
+[node name="MengeZ" type="TextureRect" parent="MenuButton2/Mengenanzeige"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 35.0
+offset_right = 565.0
+offset_bottom = 285.0
+texture = ExtResource("8_6xx1v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Line2D" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 76.1902, 104.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D2" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 104.762, 133.334, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D3" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 133.333, 161.906, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D4" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 161.904, 190.477, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D5" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 190.476, 219.048, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D6" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 219.047, 247.62, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D7" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(104.763, 219.047, 276.191, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D8" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(133.334, 219.047, 304.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D9" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(161.906, 219.047, 333.334, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D10" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(190.477, 219.047, 361.906, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D11" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(219.048, 219.047, 390.477, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D12" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(247.62, 219.047, 419.048, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D13" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(276.191, 219.047, 447.62, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D14" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(304.763, 219.047, 476.191, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D15" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(333.334, 219.047, 504.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D16" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(361.906, 219.047, 509.524, 71.4283)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D17" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(390.477, 219.047, 509.524, 99.9998)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D18" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(419.048, 219.047, 504.763, 133.333)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D19" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(447.62, 219.047, 509.524, 157.143)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D20" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeZ"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(476.191, 219.047, 509.524, 185.714)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="MengeE" type="TextureRect" parent="MenuButton2/Mengenanzeige"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 35.0
+offset_right = 1035.0
+offset_bottom = 285.0
+texture = ExtResource("5_m440y")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Line2D" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 76.1902, 104.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D2" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 104.762, 133.334, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D3" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 133.333, 161.906, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D4" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 161.904, 190.477, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D5" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 190.476, 219.048, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D6" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(76.1912, 219.047, 247.62, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D7" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(104.763, 219.047, 276.191, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D8" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(133.334, 219.047, 304.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D9" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(161.906, 219.047, 333.334, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D10" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(190.477, 219.047, 361.906, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D11" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(219.048, 219.047, 390.477, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D12" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(247.62, 219.047, 419.048, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D13" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(276.191, 219.047, 447.62, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D14" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(304.763, 219.047, 476.191, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D15" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(333.334, 219.047, 504.763, 47.6188)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D16" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(361.906, 219.047, 509.524, 71.4283)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D17" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(390.477, 219.047, 509.524, 99.9998)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D18" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(419.048, 219.047, 504.763, 133.333)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D19" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(447.62, 219.047, 509.524, 157.143)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Line2D20" type="Line2D" parent="MenuButton2/Mengenanzeige/MengeE"]
+position = Vector2(-65, -35)
+points = PackedVector2Array(476.191, 219.047, 509.524, 185.714)
+width = 5.0
+default_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="Panel" type="Panel" parent="MenuButton2"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 133.333
+offset_right = 405.0
+offset_bottom = 233.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfab0")
+
+[node name="Label1" type="Label" parent="MenuButton2/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton2/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton2/Panel"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton2/Panel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton2/Panel"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel2" type="Panel" parent="MenuButton2"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 233.333
+offset_right = 405.0
+offset_bottom = 333.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5dqu")
+
+[node name="Label1" type="Label" parent="MenuButton2/Panel2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel2/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton2/Panel2"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton2/Panel2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel2/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton2/Panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton2/Panel2"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel3" type="Panel" parent="MenuButton2"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 333.333
+offset_right = 405.0
+offset_bottom = 433.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmeec")
+
+[node name="Label1" type="Label" parent="MenuButton2/Panel3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel3/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 65.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton2/Panel3"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton2/Panel3"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton2/Panel3/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton2/Panel3"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton2/Panel3"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="MenuButton3" parent="." instance=ExtResource("2_ucyxx")]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 350.0
+offset_right = 1313.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+link = ExtResource("5_w4e75")
+sterne = 3
+
+[node name="Panel" type="Panel" parent="MenuButton3"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 133.333
+offset_right = 405.0
+offset_bottom = 233.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfab0")
+
+[node name="Label1" type="Label" parent="MenuButton3/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton3/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton3/Panel"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton3/Panel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton3/Panel"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel2" type="Panel" parent="MenuButton3"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 233.333
+offset_right = 405.0
+offset_bottom = 333.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5dqu")
+
+[node name="Label1" type="Label" parent="MenuButton3/Panel2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel2/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton3/Panel2"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton3/Panel2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel2/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton3/Panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton3/Panel2"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Panel3" type="Panel" parent="MenuButton3"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 333.333
+offset_right = 405.0
+offset_bottom = 433.333
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmeec")
+
+[node name="Label1" type="Label" parent="MenuButton3/Panel3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel3/Label1"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 65.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Label" parent="MenuButton3/Panel3"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuButton3/Panel3"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 20.0
+offset_right = 206.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")
+
+[node name="Label" type="Label" parent="MenuButton3/Panel3/Label2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 66.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="MenuButton3/Panel3"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 94.0
+theme = ExtResource("6_5w4i2")
+theme_override_font_sizes/font_size = 60
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuButton3/Panel3"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 20.0
+offset_right = 332.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm808")

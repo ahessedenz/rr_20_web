@@ -1,0 +1,224 @@
+[gd_scene load_steps=17 format=3 uid="uid://d0hxd2jxn7ljn"]
+
+[ext_resource type="PackedScene" uid="uid://c46kp5kbxr0hl" path="res://Objects/Strukturobjekte/Hintergrund/hintergrund.tscn" id="1_4dtbs"]
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/Hauptmenue/hauptmenue.gd" id="1_7v85d"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="2_0unxc"]
+[ext_resource type="Texture2D" uid="uid://c7fq2ideemrqg" path="res://Assets/Buttons/beenden_freigestellt.png" id="3_7v85d"]
+[ext_resource type="Texture2D" uid="uid://dxywsheytdq0g" path="res://Assets/Background/Lachstern.png" id="3_uv6xy"]
+[ext_resource type="Texture2D" uid="uid://ccnj5o3shlwo0" path="res://Assets/Background/Rakete_cut.png" id="4_e5b2v"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="5_6psvk"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="5_wukfu"]
+[ext_resource type="PackedScene" uid="uid://cg267i5o1konj" path="res://Objects/Zwischenmenues/zw_zahlen_11_bis_19.tscn" id="6_5fwx7"]
+[ext_resource type="PackedScene" uid="uid://k85dlswsh6g2" path="res://Objects/Zwischenmenues/zw_orientierung_zr_20.tscn" id="7_43dsk"]
+[ext_resource type="PackedScene" uid="uid://2dhu0q2cfhdg" path="res://Objects/Zwischenmenues/zw_rechnen_ohne_ZUE_20.tscn" id="8_a4bwi"]
+[ext_resource type="PackedScene" uid="uid://d2kr4fjbeqx50" path="res://Objects/Zwischenmenues/zw_zehnerueberschreitung_zwei_Schritte.tscn" id="9_100jt"]
+[ext_resource type="PackedScene" uid="uid://di8t8cfwtdi7t" path="res://Objects/Zwischenmenues/zw_zehnerueberschreitung_ein_schritt.tscn" id="10_1l55w"]
+[ext_resource type="PackedScene" uid="uid://d3qvo4i2mj80a" path="res://Objects/Zwischenmenues/zw_zehnerunterschreitung_zwei_schritte.tscn" id="11_ff4xk"]
+[ext_resource type="PackedScene" uid="uid://8y8sbv85ge3i" path="res://Objects/Zwischenmenues/zw_zehnerunterschreitung_ein_schritt.tscn" id="12_s5iu3"]
+[ext_resource type="PackedScene" uid="uid://d3y3v6b3qf4hl" path="res://Objects/Zwischenmenues/zw_ueber_und_unter_den_zehner.tscn" id="13_wb7s4"]
+
+[node name="Hauptmenue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7v85d")
+
+[node name="Hintergrund" parent="." instance=ExtResource("1_4dtbs")]
+layout_mode = 0
+
+[node name="Hintergrundbilder" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lachstern" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 1638.0
+offset_top = 120.0
+offset_right = 1835.0
+offset_bottom = 331.0
+texture = ExtResource("3_uv6xy")
+stretch_mode = 4
+
+[node name="Rakete" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 73.0
+offset_right = 546.0
+offset_bottom = 473.0
+texture = ExtResource("4_e5b2v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen1" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 1400.0
+offset_right = 550.0
+offset_bottom = 1470.0
+texture = ExtResource("5_6psvk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen2" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 1900.0
+offset_top = 812.0
+offset_right = 1950.0
+offset_bottom = 862.0
+texture = ExtResource("5_6psvk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen3" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 1613.0
+offset_top = 178.0
+offset_right = 1633.0
+offset_bottom = 198.0
+texture = ExtResource("5_6psvk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen4" type="TextureRect" parent="Hintergrundbilder"]
+layout_mode = 0
+offset_left = 1825.0
+offset_top = 291.0
+offset_right = 1845.0
+offset_bottom = 311.0
+texture = ExtResource("5_6psvk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Ueberschrift" type="Label" parent="."]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 2048.0
+offset_bottom = 280.0
+theme = ExtResource("2_0unxc")
+theme_override_font_sizes/font_size = 100
+text = "RECHENRAKETE 20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeendenButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1903.0
+offset_top = 50.0
+offset_right = 2003.0
+offset_bottom = 150.0
+focus_mode = 0
+icon = ExtResource("3_7v85d")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MenueButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuButton0" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 400.0
+offset_right = 673.0
+offset_bottom = 974.0
+scale = Vector2(0.8, 0.8)
+string = "Die Zahlen|11 bis 19"
+seitenzahlen = "S. 1 - 8"
+link = ExtResource("6_5fwx7")
+
+[node name="MenuButton1" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 400.0
+offset_right = 1091.0
+offset_bottom = 974.0
+scale = Vector2(0.8, 0.8)
+string = "Orientierung|im Zahlenraum|bis 20"
+seitenzahlen = "S. 9 - 11"
+link = ExtResource("7_43dsk")
+
+[node name="MenuButton2" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 400.0
+offset_right = 1509.0
+offset_bottom = 974.0
+scale = Vector2(0.8, 0.8)
+string = "Rechnen|ohne ZÜ|bis 20"
+seitenzahlen = "S. 14 - 26"
+link = ExtResource("8_a4bwi")
+
+[node name="MenuButton3" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 1467.0
+offset_top = 400.0
+offset_right = 1927.0
+offset_bottom = 974.0
+scale = Vector2(0.8, 0.8)
+string = "Über den|Zehner|in zwei|Schritten"
+seitenzahlen = "S. 27 - 34"
+link = ExtResource("9_100jt")
+
+[node name="MenuButton4" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 909.0
+offset_right = 673.0
+offset_bottom = 1483.0
+scale = Vector2(0.8, 0.8)
+string = "Über den|Zehner|in einem|Schritt"
+seitenzahlen = "S. 35 - 39"
+link = ExtResource("10_1l55w")
+
+[node name="MenuButton5" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 909.0
+offset_right = 1091.0
+offset_bottom = 1483.0
+scale = Vector2(0.8, 0.8)
+string = "Unter den|Zehner|in zwei|Schritten"
+seitenzahlen = "S. 40 - 44"
+link = ExtResource("11_ff4xk")
+
+[node name="MenuButton6" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 909.0
+offset_right = 1509.0
+offset_bottom = 1483.0
+scale = Vector2(0.8, 0.8)
+string = "Unter den|Zehner|in einem|Schritt"
+seitenzahlen = "S. 45 - 47"
+link = ExtResource("12_s5iu3")
+
+[node name="MenuButton7" parent="MenueButtons" instance=ExtResource("5_wukfu")]
+layout_mode = 0
+offset_left = 1467.0
+offset_top = 909.0
+offset_right = 1927.0
+offset_bottom = 1483.0
+scale = Vector2(0.8, 0.8)
+string = "Sachrechnen|und|Üben"
+seitenzahlen = "S. 48 - 55"
+link = ExtResource("13_wb7s4")
+
+[node name="freigeschaltet" type="Label" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 1505.0
+offset_right = 1224.0
+offset_bottom = 1545.0
+theme = ExtResource("2_0unxc")
+theme_override_font_sizes/font_size = 30
+text = "freigeschaltet bis:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BeendenButton" to="." method="_on_beenden_button_pressed"]

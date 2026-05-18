@@ -1,0 +1,581 @@
+[gd_scene load_steps=14 format=3 uid="uid://y6ewe6nq86ry"]
+
+[ext_resource type="PackedScene" uid="uid://dqgngdmxtt1bg" path="res://Objects/Strukturobjekte/Aufgaben_Grundgeruest/aufgaben_grundgeruest.tscn" id="1_7arx4"]
+[ext_resource type="Script" path="res://Objects/Aufgaben/Pfeilmodell_Zehnerunterschreitung/pfeilmodell_zehnerunterschreitung_2.gd" id="1_xbcfq"]
+[ext_resource type="Texture2D" uid="uid://fj8ikdpsiavh" path="res://Assets/Mengen/Zug/Zug_10.png" id="2_0lbpl"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="3_cgmv8"]
+[ext_resource type="Texture2D" uid="uid://b323im567c017" path="res://Assets/Mengen/Zug/Zug_0.png" id="3_udrdf"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="4_p8lkx"]
+[ext_resource type="Texture2D" uid="uid://6b6px41rfg2t" path="res://Assets/Arrow/arrow.png" id="5_o8o6g"]
+[ext_resource type="PackedScene" uid="uid://1jg2htq1b20n" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.tscn" id="6_5g1ux"]
+[ext_resource type="PackedScene" uid="uid://bewngadi2qv8m" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.tscn" id="7_4sg2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0833"]
+bg_color = Color(1, 0.87451, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnkfe"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si24m"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scvxb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.0392157, 0.0392157, 1)
+
+[node name="Pfeilmodell_Zehnerunterschreitung_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbcfq")
+
+[node name="Aufgaben_Grundgeruest" parent="." instance=ExtResource("1_7arx4")]
+layout_mode = 1
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+offset_left = 150.0
+offset_top = 331.0
+offset_right = 234.0
+offset_bottom = 422.0
+texture = ExtResource("3_cgmv8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+offset_left = 1800.0
+offset_top = 900.0
+offset_right = 1860.0
+offset_bottom = 960.0
+texture = ExtResource("3_cgmv8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AufgabenPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 500.0
+offset_right = 1524.0
+offset_bottom = 1100.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m0833")
+
+[node name="Mengenanzeige" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_top = -300.0
+offset_right = 1000.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnkfe")
+
+[node name="MengeZ" type="TextureRect" parent="AufgabenPanel/Mengenanzeige"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 49.0
+offset_right = 530.0
+offset_bottom = 299.0
+texture = ExtResource("2_0lbpl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Schraffur" type="Control" parent="AufgabenPanel/Mengenanzeige/MengeZ"]
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -49.0
+offset_right = 10.0
+offset_bottom = -9.0
+
+[node name="Line2D" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(43, 90, 73, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D2" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(43, 120, 103, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D3" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(43, 150, 133, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D4" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(43, 180, 163, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D5" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(43, 210, 193, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D6" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(51, 232, 223, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D7" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(81, 232, 253, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D8" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(111, 232, 283, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D9" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(141, 232, 313, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D10" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(171, 232, 343, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D11" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(201, 232, 373, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D12" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(231, 232, 403, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D13" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(261, 232, 433, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D14" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(291, 232, 463, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D15" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(321, 232, 473, 80)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D16" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(351, 232, 473, 110)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D17" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(381, 232, 473, 140)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D18" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(411, 232, 473, 170)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D19" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeZ/Schraffur"]
+points = PackedVector2Array(441, 232, 473, 200)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="MengeE" type="TextureRect" parent="AufgabenPanel/Mengenanzeige"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 49.0
+offset_right = 1000.0
+offset_bottom = 299.0
+texture = ExtResource("3_udrdf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Schraffur" type="Control" parent="AufgabenPanel/Mengenanzeige/MengeE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -49.0
+offset_right = 10.0
+offset_bottom = -9.0
+
+[node name="Line2D" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(43, 90, 73, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D2" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(43, 120, 103, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D3" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(43, 150, 133, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D4" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(43, 180, 163, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D5" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(43, 210, 193, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D6" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(51, 232, 223, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D7" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(81, 232, 253, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D8" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(111, 232, 283, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D9" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(141, 232, 313, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D10" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(171, 232, 343, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D11" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(201, 232, 373, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D12" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(231, 232, 403, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D13" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(261, 232, 433, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D14" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(291, 232, 463, 60)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D15" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(321, 232, 473, 80)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D16" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(351, 232, 473, 110)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D17" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(381, 232, 473, 140)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D18" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(411, 232, 473, 170)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Line2D19" type="Line2D" parent="AufgabenPanel/Mengenanzeige/MengeE/Schraffur"]
+points = PackedVector2Array(441, 232, 473, 200)
+width = 3.0
+default_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="Kasten_Z1" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 138.0
+offset_right = 240.0
+offset_bottom = 298.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_si24m")
+
+[node name="Zahl_Z1" type="Label" parent="AufgabenPanel/Kasten_Z1"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 170.0
+theme = ExtResource("4_p8lkx")
+theme_override_font_sizes/font_size = 120
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PfeilOben" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 168.0
+offset_right = 790.0
+offset_bottom = 268.0
+texture = ExtResource("5_o8o6g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Minus1" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 65.0
+offset_right = 446.0
+offset_bottom = 210.0
+theme = ExtResource("4_p8lkx")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kasten_Z2" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 50.0
+offset_right = 617.0
+offset_bottom = 210.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_scvxb")
+metadata/_edit_group_ = true
+
+[node name="Zahl_Z2" type="Label" parent="AufgabenPanel/Kasten_Z2"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 170.0
+theme = ExtResource("4_p8lkx")
+theme_override_font_sizes/font_size = 120
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ergebnis" parent="AufgabenPanel" instance=ExtResource("6_5g1ux")]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 138.0
+offset_right = 950.0
+offset_bottom = 298.0
+laenge = 1
+
+[node name="voll" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 298.0
+offset_right = 427.0
+offset_bottom = 359.0
+rotation = 0.785398
+theme = ExtResource("4_p8lkx")
+theme_override_colors/font_color = Color(1, 0.0392157, 0.0392157, 1)
+theme_override_font_sizes/font_size = 50
+text = "leer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PfeilLinks" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 266.0
+offset_right = 529.0
+offset_bottom = 366.0
+rotation = 0.785398
+texture = ExtResource("5_o8o6g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Minus2" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 393.0
+offset_right = 144.0
+offset_bottom = 538.0
+theme = ExtResource("4_p8lkx")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eingabefeld_links" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("6_5g1ux")]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 378.0
+offset_right = 314.0
+offset_bottom = 538.0
+next = NodePath("../Zwischenergebnis")
+rahmenfarbe = "rot"
+
+[node name="Zwischenergebnis" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("6_5g1ux")]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 398.0
+offset_right = 580.0
+offset_bottom = 558.0
+laenge = 2
+next = NodePath("../Eingabefeld_rechts")
+aktualisiere_Anzeige = true
+
+[node name="Rest" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 377.0
+offset_right = 745.0
+offset_bottom = 438.0
+rotation = -0.785398
+theme = ExtResource("4_p8lkx")
+theme_override_colors/font_color = Color(1, 0.0392157, 0.0392157, 1)
+theme_override_font_sizes/font_size = 50
+text = "Rest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PfeilRechts" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 433.0
+offset_right = 835.0
+offset_bottom = 533.0
+rotation = -0.785398
+texture = ExtResource("5_o8o6g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Minus3" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 393.0
+offset_right = 744.0
+offset_bottom = 538.0
+theme = ExtResource("4_p8lkx")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eingabefeld_rechts" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("6_5g1ux")]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 378.0
+offset_right = 914.0
+offset_bottom = 538.0
+next = NodePath("../Ergebnis")
+rahmenfarbe = "rot"
+
+[node name="Zahlbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 1150.0
+offset_right = 256.0
+offset_bottom = 1310.0
+index = "1"
+
+[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 1150.0
+offset_right = 441.0
+offset_bottom = 1310.0
+index = "2"
+
+[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 1150.0
+offset_right = 626.0
+offset_bottom = 1310.0
+index = "3"
+
+[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 1150.0
+offset_right = 811.0
+offset_bottom = 1310.0
+index = "4"
+
+[node name="ZahlButton5" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 1150.0
+offset_right = 996.0
+offset_bottom = 1310.0
+index = "5"
+
+[node name="ZahlButton6" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 1150.0
+offset_right = 1181.0
+offset_bottom = 1310.0
+index = "6"
+
+[node name="ZahlButton7" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 1206.0
+offset_top = 1150.0
+offset_right = 1366.0
+offset_bottom = 1310.0
+index = "7"
+
+[node name="ZahlButton8" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 1150.0
+offset_right = 1551.0
+offset_bottom = 1310.0
+index = "8"
+
+[node name="ZahlButton9" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 1576.0
+offset_top = 1150.0
+offset_right = 1736.0
+offset_bottom = 1310.0
+index = "9"
+
+[node name="ZahlButton10" parent="Zahlbuttons" instance=ExtResource("7_4sg2m")]
+layout_mode = 0
+offset_left = 1761.0
+offset_top = 1150.0
+offset_right = 1921.0
+offset_bottom = 1310.0
+index = "10"
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

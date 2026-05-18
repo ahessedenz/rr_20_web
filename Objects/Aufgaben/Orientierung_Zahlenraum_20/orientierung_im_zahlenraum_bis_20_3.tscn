@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5etnkleywmta"]
+
+[ext_resource type="PackedScene" uid="uid://dqgngdmxtt1bg" path="res://Objects/Strukturobjekte/Aufgaben_Grundgeruest/aufgaben_grundgeruest.tscn" id="1_cmmia"]
+[ext_resource type="Script" path="res://Objects/Aufgaben/Orientierung_Zahlenraum_20/orientierung_im_zahlenraum_bis_20_3.gd" id="1_g0r3w"]
+[ext_resource type="Texture2D" uid="uid://ctljnwlroowpj" path="res://Assets/Arrow/marker2.png" id="2_xpp6k"]
+[ext_resource type="Texture2D" uid="uid://nvop5q44dvpl" path="res://Assets/Background/Ufo2.png" id="3_s5uru"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="3_s16y6"]
+[ext_resource type="PackedScene" uid="uid://1jg2htq1b20n" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.tscn" id="4_i8odj"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="4_uwrot"]
+[ext_resource type="PackedScene" uid="uid://bewngadi2qv8m" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.tscn" id="5_srw0y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8wrl"]
+
+[node name="OrientierungImZahlenraumBis20_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g0r3w")
+
+[node name="Aufgaben_Grundgeruest" parent="." instance=ExtResource("1_cmmia")]
+layout_mode = 1
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ufo" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 200.0
+offset_right = 1850.0
+offset_bottom = 450.0
+texture = ExtResource("3_s5uru")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 331.0
+offset_right = 234.0
+offset_bottom = 422.0
+texture = ExtResource("4_uwrot")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AufgabenPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 1948.0
+offset_bottom = 1000.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f8wrl")
+
+[node name="Marker1" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 236.0
+offset_right = 134.0
+offset_bottom = 295.0
+texture = ExtResource("2_xpp6k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Marker2" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 236.0
+offset_right = 934.0
+offset_bottom = 295.0
+texture = ExtResource("2_xpp6k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Marker3" type="TextureRect" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 1303.0
+offset_top = 236.0
+offset_right = 1414.0
+offset_bottom = 295.0
+texture = ExtResource("2_xpp6k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Rechenstrich" type="Line2D" parent="AufgabenPanel"]
+position = Vector2(0, 300)
+points = PackedVector2Array(78, 0, 1750, 0)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Null_Strich" type="Line2D" parent="AufgabenPanel"]
+points = PackedVector2Array(80, 271, 80, 328)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Zwanzig_Strich" type="Line2D" parent="AufgabenPanel"]
+points = PackedVector2Array(1680, 271, 1680, 328)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Null_Zahl" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 330.0
+offset_right = 156.0
+offset_bottom = 405.0
+theme = ExtResource("3_s16y6")
+theme_override_font_sizes/font_size = 80
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zwanzig_Zahl" type="Label" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 1605.0
+offset_top = 330.0
+offset_right = 1755.0
+offset_bottom = 405.0
+theme = ExtResource("3_s16y6")
+theme_override_font_sizes/font_size = 80
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eingabefeld1" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("4_i8odj")]
+layout_mode = 0
+offset_top = 76.0
+offset_bottom = 236.0
+laenge = 1
+next = NodePath("../Eingabefeld2")
+aktualisiere_Anzeige = true
+
+[node name="Eingabefeld2" parent="AufgabenPanel" node_paths=PackedStringArray("next") instance=ExtResource("4_i8odj")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 76.0
+offset_right = 960.0
+offset_bottom = 236.0
+laenge = 1
+next = NodePath("../Eingabefeld3")
+aktualisiere_Anzeige = true
+
+[node name="Eingabefeld3" parent="AufgabenPanel" instance=ExtResource("4_i8odj")]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 76.0
+offset_right = 1440.0
+offset_bottom = 236.0
+laenge = 1
+
+[node name="Zahlbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ZahlButton0" parent="Zahlbuttons" instance=ExtResource("5_srw0y")]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 1150.0
+offset_right = 659.0
+offset_bottom = 1310.0
+index = "0"
+
+[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("5_srw0y")]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 1150.0
+offset_right = 874.0
+offset_bottom = 1310.0
+index = "1"
+
+[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("5_srw0y")]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 1150.0
+offset_right = 1089.0
+offset_bottom = 1310.0
+index = "2"
+
+[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("5_srw0y")]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 1150.0
+offset_right = 1304.0
+offset_bottom = 1310.0
+index = "3"
+
+[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("5_srw0y")]
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 1150.0
+offset_right = 1519.0
+offset_bottom = 1310.0
+index = "4"

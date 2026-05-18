@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bewngadi2qv8m"]
+
+[ext_resource type="Script" uid="uid://dbiuarxfrc5pg" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.gd" id="1_72yfp"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="1_etr1m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8e38"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etr1m"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72yfp"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vua21"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etr1m"]
+size = Vector2(80, 120)
+
+[node name="ZahlButton" type="Button" unique_id=2138537526]
+offset_right = 160.0
+offset_bottom = 160.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8e38")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_etr1m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_72yfp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vua21")
+script = ExtResource("1_72yfp")
+
+[node name="Label" type="Label" parent="." unique_id=1730641104]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 170.0
+theme = ExtResource("1_etr1m")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2048121952 groups=["Button"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2130681712]
+position = Vector2(80, 80)
+shape = SubResource("RectangleShape2D_etr1m")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb6note6w4fgy"]
+
+[ext_resource type="PackedScene" uid="uid://dnxnbh7jf2y4d" path="res://Objects/Popups/popup_hintergrund.tscn" id="1_b4nrx"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_sdf0j"]
+[ext_resource type="PackedScene" uid="uid://snumvlcg3xhy" path="res://Objects/Aufgaben/Rechnen_mit_20/rechnen_mit_20_1.tscn" id="3_uhbbx"]
+[ext_resource type="PackedScene" uid="uid://sc7nk5s4tafe" path="res://Objects/Aufgaben/Rechnen_mit_20/rechnen_mit_20_2.tscn" id="4_x36ex"]
+[ext_resource type="PackedScene" uid="uid://b8owxbg2iom7i" path="res://Objects/Aufgaben/Rechnen_mit_20/rechnen_mit_20_3.tscn" id="5_ivhem"]
+
+[node name="Popup_Rechnen_mit_20" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup_Hintergrund" parent="." instance=ExtResource("1_b4nrx")]
+layout_mode = 1
+titel = "Rechnen mit der Zahl 20"
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_sdf0j")]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 350.0
+offset_right = 661.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+string = "Ergänzen|zur 20"
+link = ExtResource("3_uhbbx")
+sterne = 1
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_sdf0j")]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 350.0
+offset_right = 987.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+string = "Subtrahieren|von 20"
+link = ExtResource("4_x36ex")
+sterne = 2
+
+[node name="MenuButton3" parent="." instance=ExtResource("2_sdf0j")]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 350.0
+offset_right = 1313.0
+offset_bottom = 924.0
+scale = Vector2(0.6, 0.6)
+string = "Kettenaufgaben|bis 20"
+link = ExtResource("5_ivhem")
+sterne = 3

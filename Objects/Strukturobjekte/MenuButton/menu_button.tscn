@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://4brj0lsuurkk"]
+
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/MenuButton/menu_button.gd" id="1_peghm"]
+[ext_resource type="Texture2D" uid="uid://dxq804plp7555" path="res://Assets/Menues/einmaleins.png" id="1_yup41"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="2_ufwty"]
+[ext_resource type="Texture2D" uid="uid://cfh8o5yvbq8ve" path="res://Assets/Menues/star_gold.png" id="3_lo7vr"]
+
+[node name="MenuButton" type="Button"]
+offset_right = 460.0
+offset_bottom = 574.0
+script = ExtResource("1_peghm")
+
+[node name="gelberRahmen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_yup41")
+
+[node name="weißerHintergrund" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 445.0
+offset_bottom = 558.0
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 574.0
+theme = ExtResource("2_ufwty")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seitenzahlen" type="Label" parent="."]
+layout_mode = 0
+offset_top = 502.0
+offset_right = 460.0
+offset_bottom = 563.0
+theme = ExtResource("2_ufwty")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 460.0
+offset_bottom = 530.0
+alignment = 1
+
+[node name="Stern1" type="TextureRect" parent="HFlowContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_lo7vr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Stern2" type="TextureRect" parent="HFlowContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_lo7vr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Stern3" type="TextureRect" parent="HFlowContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_lo7vr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Stern4" type="TextureRect" parent="HFlowContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_lo7vr")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

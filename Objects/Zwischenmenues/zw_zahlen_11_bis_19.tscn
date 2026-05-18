@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg267i5o1konj"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xgkk8mxesh" path="res://Objects/Zwischenmenues/zwischenmenue.tscn" id="1_b35ro"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="2_ly1to"]
+[ext_resource type="Texture2D" uid="uid://ccnj5o3shlwo0" path="res://Assets/Background/Rakete_cut.png" id="2_m35ty"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_wa37r"]
+[ext_resource type="Texture2D" uid="uid://dxywsheytdq0g" path="res://Assets/Background/Lachstern.png" id="2_wtxfm"]
+[ext_resource type="Texture2D" uid="uid://nvop5q44dvpl" path="res://Assets/Background/Ufo2.png" id="3_f0h0s"]
+[ext_resource type="PackedScene" uid="uid://dhplkqdlf38pm" path="res://Objects/Aufgaben/Aufbau_zweistelliger_Zahlen/aufbau_zweistelliger_zahlen_1.tscn" id="3_i6lrt"]
+[ext_resource type="PackedScene" uid="uid://v32twxt0d37h" path="res://Objects/Aufgaben/Gleichungen_11_bis_19/gleichungen_11_bis_19_1.tscn" id="4_c287s"]
+
+[node name="zw_Zahlen_11_bis_19" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Zwischenmenue" parent="." instance=ExtResource("1_b35ro")]
+layout_mode = 1
+titel = "Die Zahlen 11 bis 19"
+
+[node name="Grafiken" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lachstern" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 220.0
+offset_right = 400.0
+offset_bottom = 420.0
+texture = ExtResource("2_wtxfm")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="Ufo" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 200.0
+offset_right = 1875.0
+offset_bottom = 475.0
+texture = ExtResource("3_f0h0s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Rakete" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1700.0
+offset_top = 1194.0
+offset_right = 1930.0
+offset_bottom = 1494.0
+texture = ExtResource("2_m35ty")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1250.0
+offset_right = 470.0
+offset_bottom = 1320.0
+texture = ExtResource("2_ly1to")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 800.0
+offset_right = 1850.0
+offset_bottom = 850.0
+texture = ExtResource("2_ly1to")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_wa37r")]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 550.0
+offset_right = 999.0
+offset_bottom = 1124.0
+string = "Aufbau|zweistelliger|Zahlen"
+seitenzahlen = "S. 2 - 6"
+link = ExtResource("3_i6lrt")
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_wa37r")]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 550.0
+offset_right = 1509.0
+offset_bottom = 1124.0
+string = "Gleichungen|zu den Zahlen|11 bis 19"
+seitenzahlen = "S. 7 - 8"
+link = ExtResource("4_c287s")

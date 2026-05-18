@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6u1qrc3jv2fo"]
+
+[ext_resource type="Texture2D" uid="uid://b323im567c017" path="res://Assets/Mengen/Zug/Zug_0.png" id="1_7km6u"]
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld_zug.gd" id="1_m6u8x"]
+[ext_resource type="AudioStream" uid="uid://cbkasr8nixdj8" path="res://Assets/Sounds/LQ_Correct_Answer_03.wav" id="2_c103x"]
+[ext_resource type="AudioStream" uid="uid://bkgbw53rnkrou" path="res://Assets/Sounds/LQ_Wrong_Answer_02.wav" id="3_2r3nd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj8ps"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1dv"]
+size = Vector2(1038, 434)
+
+[node name="Eingabefeld_Zug" type="Label" groups=["Eingabefeld"]]
+offset_right = 1129.0
+offset_bottom = 587.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_uj8ps")
+script = ExtResource("1_m6u8x")
+
+[node name="Anzeige" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7km6u")
+
+[node name="Striche" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="K1" type="Line2D" parent="Striche"]
+points = PackedVector2Array(27, 433, 230, 230)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K2" type="Line2D" parent="Striche"]
+points = PackedVector2Array(230, 433, 433, 230)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K3" type="Line2D" parent="Striche"]
+points = PackedVector2Array(433, 433, 636, 230)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K4" type="Line2D" parent="Striche"]
+points = PackedVector2Array(636, 433, 839, 230)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K5" type="Line2D" parent="Striche"]
+points = PackedVector2Array(839, 433, 1042, 230)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K6" type="Line2D" parent="Striche"]
+points = PackedVector2Array(27, 230, 230, 27)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K7" type="Line2D" parent="Striche"]
+points = PackedVector2Array(230, 230, 433, 27)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K8" type="Line2D" parent="Striche"]
+points = PackedVector2Array(433, 230, 636, 27)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K9" type="Line2D" parent="Striche"]
+points = PackedVector2Array(636, 230, 839, 27)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="K10" type="Line2D" parent="Striche"]
+points = PackedVector2Array(839, 230, 1042, 27)
+width = 20.0
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Richtig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c103x")
+
+[node name="Falsch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2r3nd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(537, 228)
+shape = SubResource("RectangleShape2D_bk1dv")
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

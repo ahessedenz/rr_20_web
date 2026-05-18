@@ -1,0 +1,412 @@
+[gd_scene load_steps=15 format=3 uid="uid://dpr4qhhc14d7m"]
+
+[ext_resource type="PackedScene" uid="uid://dqgngdmxtt1bg" path="res://Objects/Strukturobjekte/Aufgaben_Grundgeruest/aufgaben_grundgeruest.tscn" id="1_0nfpe"]
+[ext_resource type="Script" path="res://Objects/Aufgaben/Von_zwei_zu_einem_Schritt_ZU/von_2_zu_1_zu_1.gd" id="1_ftva1"]
+[ext_resource type="Texture2D" uid="uid://fj8ikdpsiavh" path="res://Assets/Mengen/Zug/Zug_10.png" id="2_e2igc"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="3_foogv"]
+[ext_resource type="Texture2D" uid="uid://b323im567c017" path="res://Assets/Mengen/Zug/Zug_0.png" id="3_rwli5"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="4_iueoc"]
+[ext_resource type="PackedScene" uid="uid://1jg2htq1b20n" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.tscn" id="5_nub3u"]
+[ext_resource type="PackedScene" uid="uid://bewngadi2qv8m" path="res://Objects/Strukturobjekte/AufgabenButtons/zahl_button.tscn" id="6_eqwvu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw80t"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py3da"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cfx"]
+bg_color = Color(1, 0.87451, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvrfv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppqhq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbij0"]
+bg_color = Color(1, 0.87451, 0.2, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Von2zu1ZU_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftva1")
+
+[node name="Aufgaben_Grundgeruest" parent="." instance=ExtResource("1_0nfpe")]
+layout_mode = 1
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+offset_left = 150.0
+offset_top = 331.0
+offset_right = 234.0
+offset_bottom = 422.0
+texture = ExtResource("3_foogv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+offset_left = 1800.0
+offset_top = 900.0
+offset_right = 1860.0
+offset_bottom = 960.0
+texture = ExtResource("3_foogv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AufgabenPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 175.0
+offset_right = 1657.0
+offset_bottom = 1075.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vw80t")
+
+[node name="Mengenanzeige" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1216.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_py3da")
+
+[node name="MengeZ" type="TextureRect" parent="AufgabenPanel/Mengenanzeige"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 49.0
+offset_right = 598.0
+offset_bottom = 299.0
+texture = ExtResource("2_e2igc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MengeE" type="TextureRect" parent="AufgabenPanel/Mengenanzeige"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 49.0
+offset_right = 1068.0
+offset_bottom = 299.0
+texture = ExtResource("3_rwli5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RechenfeldOben" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 1216.0
+offset_bottom = 850.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_86cfx")
+
+[node name="ObenS1" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 45.0
+offset_right = 240.0
+offset_bottom = 205.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mvrfv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldOben/ObenS1"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 170.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 65.0
+offset_right = 342.0
+offset_bottom = 210.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ObenS2" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 45.0
+offset_right = 678.0
+offset_bottom = 205.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ppqhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldOben/ObenS2"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 170.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 65.0
+offset_right = 926.0
+offset_bottom = 210.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EingabefeldObenS3" parent="AufgabenPanel/RechenfeldOben" instance=ExtResource("5_nub3u")]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 45.0
+offset_right = 1116.0
+offset_bottom = 205.0
+laenge = 1
+
+[node name="RechenfeldUnten" type="Panel" parent="AufgabenPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 600.0
+offset_right = 1216.0
+offset_bottom = 850.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbij0")
+
+[node name="UntenS1" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 45.0
+offset_right = 240.0
+offset_bottom = 205.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mvrfv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldUnten/UntenS1"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 170.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 65.0
+offset_right = 342.0
+offset_bottom = 210.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="leer" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = -20.0
+offset_right = 532.0
+offset_bottom = 55.0
+theme = ExtResource("4_iueoc")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "leer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EingabefeldUntenS1" parent="AufgabenPanel/RechenfeldUnten" node_paths=PackedStringArray("next") instance=ExtResource("5_nub3u")]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 45.0
+offset_right = 532.0
+offset_bottom = 205.0
+laenge = 1
+next = NodePath("../EingabefeldUntenS2")
+aktualisiere_Anzeige = true
+rahmenfarbe = "rot"
+
+[node name="Rechenzeichen2" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 65.0
+offset_right = 634.0
+offset_bottom = 210.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rest" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 664.0
+offset_top = -20.0
+offset_right = 824.0
+offset_bottom = 55.0
+theme = ExtResource("4_iueoc")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Rest"
+horizontal_alignment = 1
+
+[node name="EingabefeldUntenS2" parent="AufgabenPanel/RechenfeldUnten" node_paths=PackedStringArray("next") instance=ExtResource("5_nub3u")]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 45.0
+offset_right = 824.0
+offset_bottom = 205.0
+laenge = 1
+next = NodePath("../EingabefeldUntenS3")
+aktualisiere_Anzeige = true
+rahmenfarbe = "rot"
+
+[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 65.0
+offset_right = 926.0
+offset_bottom = 210.0
+theme = ExtResource("4_iueoc")
+theme_override_font_sizes/font_size = 120
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EingabefeldUntenS3" parent="AufgabenPanel/RechenfeldUnten" node_paths=PackedStringArray("next") instance=ExtResource("5_nub3u")]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 45.0
+offset_right = 1116.0
+offset_bottom = 205.0
+laenge = 1
+next = NodePath("../../RechenfeldOben/EingabefeldObenS3")
+
+[node name="Zahlbuttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 1150.0
+offset_right = 271.0
+offset_bottom = 1310.0
+index = "1"
+
+[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 1150.0
+offset_right = 456.0
+offset_bottom = 1310.0
+index = "2"
+
+[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 1150.0
+offset_right = 641.0
+offset_bottom = 1310.0
+index = "3"
+
+[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 1150.0
+offset_right = 826.0
+offset_bottom = 1310.0
+index = "4"
+
+[node name="ZahlButton5" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 1150.0
+offset_right = 1011.0
+offset_bottom = 1310.0
+index = "5"
+
+[node name="ZahlButton6" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 1150.0
+offset_right = 1196.0
+offset_bottom = 1310.0
+index = "6"
+
+[node name="ZahlButton7" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 1150.0
+offset_right = 1381.0
+offset_bottom = 1310.0
+index = "7"
+
+[node name="ZahlButton8" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 1406.0
+offset_top = 1150.0
+offset_right = 1566.0
+offset_bottom = 1310.0
+index = "8"
+
+[node name="ZahlButton9" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 1591.0
+offset_top = 1150.0
+offset_right = 1751.0
+offset_bottom = 1310.0
+index = "9"
+
+[node name="ZahlButton10" parent="Zahlbuttons" instance=ExtResource("6_eqwvu")]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 1150.0
+offset_right = 1936.0
+offset_bottom = 1310.0
+index = "10"

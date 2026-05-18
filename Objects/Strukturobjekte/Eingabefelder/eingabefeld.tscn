@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://1jg2htq1b20n"]
+
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.gd" id="1_1m2b6"]
+[ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="1_xk3gj"]
+[ext_resource type="AudioStream" uid="uid://cbkasr8nixdj8" path="res://Assets/Sounds/LQ_Correct_Answer_03.wav" id="2_8qpjt"]
+[ext_resource type="AudioStream" uid="uid://bkgbw53rnkrou" path="res://Assets/Sounds/LQ_Wrong_Answer_02.wav" id="3_1m2b6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8u7m"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07w0t"]
+size = Vector2(80, 80)
+
+[node name="Eingabefeld" type="Label" groups=["Eingabefeld"]]
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8u7m")
+script = ExtResource("1_1m2b6")
+
+[node name="Anzeige" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 170.0
+theme = ExtResource("1_xk3gj")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Richtig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8qpjt")
+
+[node name="Falsch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1m2b6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80, 80)
+shape = SubResource("RectangleShape2D_07w0t")
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

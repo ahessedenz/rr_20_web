@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://k85dlswsh6g2"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xgkk8mxesh" path="res://Objects/Zwischenmenues/zwischenmenue.tscn" id="1_wvq2w"]
+[ext_resource type="Texture2D" uid="uid://vkp8877kyyc0" path="res://Assets/Background/Hund.png" id="2_2psjj"]
+[ext_resource type="PackedScene" uid="uid://4brj0lsuurkk" path="res://Objects/Strukturobjekte/MenuButton/menu_button.tscn" id="2_7mr6b"]
+[ext_resource type="PackedScene" uid="uid://cbyldp5wcmigh" path="res://Objects/Aufgaben/Orientierung_Zahlenraum_20/orientierung_im_zahlenraum_bis_20_1.tscn" id="3_eakqu"]
+[ext_resource type="Texture2D" uid="uid://nvop5q44dvpl" path="res://Assets/Background/Ufo2.png" id="3_jyvwa"]
+[ext_resource type="PackedScene" uid="uid://8iu0usr684fy" path="res://Objects/Aufgaben/Orientierung_Zahlenraum_20/orientierung_im_zahlenraum_bis_20_2.tscn" id="4_8kndf"]
+[ext_resource type="Texture2D" uid="uid://muw8ljfe0nma" path="res://Assets/Background/Sternchen.png" id="4_cwrps"]
+[ext_resource type="PackedScene" uid="uid://c5etnkleywmta" path="res://Objects/Aufgaben/Orientierung_Zahlenraum_20/orientierung_im_zahlenraum_bis_20_3.tscn" id="5_58eoi"]
+
+[node name="zw_Orientierung_ZR_20" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Zwischenmenue" parent="." instance=ExtResource("1_wvq2w")]
+layout_mode = 1
+titel = "Orientierung im Zahlenraum bis 20"
+
+[node name="Grafiken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hund" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 270.0
+offset_right = 425.0
+offset_bottom = 495.0
+texture = ExtResource("2_2psjj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Ufo" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1650.0
+offset_top = 250.0
+offset_right = 1900.0
+offset_bottom = 450.0
+texture = ExtResource("3_jyvwa")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1250.0
+offset_right = 470.0
+offset_bottom = 1320.0
+texture = ExtResource("4_cwrps")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+layout_mode = 0
+offset_left = 1850.0
+offset_top = 800.0
+offset_right = 1900.0
+offset_bottom = 850.0
+texture = ExtResource("4_cwrps")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MenuButton1" parent="." instance=ExtResource("2_7mr6b")]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 550.0
+offset_right = 744.0
+offset_bottom = 1124.0
+string = "Vorgänger|und|Nachfolger"
+seitenzahlen = "S. 9"
+link = ExtResource("3_eakqu")
+
+[node name="MenuButton2" parent="." instance=ExtResource("2_7mr6b")]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 550.0
+offset_right = 1254.0
+offset_bottom = 1124.0
+string = "Orientierung|am|Zahlenstrahl"
+seitenzahlen = "S. 9 - 10"
+link = ExtResource("4_8kndf")
+
+[node name="MenuButton3" parent="." instance=ExtResource("2_7mr6b")]
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 550.0
+offset_right = 1764.0
+offset_bottom = 1124.0
+string = "Orientierung|am|Rechenstrich"
+seitenzahlen = "S. 11"
+link = ExtResource("5_58eoi")

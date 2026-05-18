@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3wmb7ifxr5lr"]
+
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld_split.gd" id="1_4xu1w"]
+[ext_resource type="PackedScene" uid="uid://blje55l28sco" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld_split_teil.tscn" id="1_xhlwb"]
+[ext_resource type="AudioStream" uid="uid://cbkasr8nixdj8" path="res://Assets/Sounds/LQ_Correct_Answer_03.wav" id="2_we02s"]
+[ext_resource type="AudioStream" uid="uid://bkgbw53rnkrou" path="res://Assets/Sounds/LQ_Wrong_Answer_02.wav" id="3_4xu1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri8i3"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="EingabefeldSplit" type="Label" groups=["Eingabefeld"]]
+offset_right = 260.0
+offset_bottom = 180.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ri8i3")
+script = ExtResource("1_4xu1w")
+
+[node name="EingabefeldSplitTeilZ" parent="." instance=ExtResource("1_xhlwb")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 170.0
+
+[node name="EingabefeldSplitTeilE" parent="." instance=ExtResource("1_xhlwb")]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 170.0
+
+[node name="Richtig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_we02s")
+
+[node name="Falsch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4xu1w")

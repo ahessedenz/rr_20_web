@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqfv5c5ki243"]
+
+[ext_resource type="Texture2D" uid="uid://bb0q2kl4rptd1" path="res://Assets/Buttons/Button_SoundON.png" id="1_pyeed"]
+[ext_resource type="Script" path="res://Objects/Strukturobjekte/SoundButton/sound_button.gd" id="2_x0j4k"]
+
+[node name="SoundButton" type="Button"]
+offset_right = 120.0
+offset_bottom = 120.0
+focus_mode = 0
+icon = ExtResource("1_pyeed")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_x0j4k")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
