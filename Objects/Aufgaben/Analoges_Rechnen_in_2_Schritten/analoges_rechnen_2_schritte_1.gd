@@ -18,7 +18,7 @@ func _erzeuge_aufgabe() -> void:
 			zahl1 = randi() %9 +11
 			zahl2 = randi() %9 +1
 	else:
-		while zahl1 - zahl2 < 10:
+		while zahl1 - zahl2 <= 10:
 			zahl1 = randi() %9 +11
 			zahl2 = randi() %9 +1
 	_aufgabe_anzeigen(zahl1, zahl2, operator)

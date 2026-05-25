@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c07nyehqwvrj"]
+[gd_scene format=3 uid="uid://c07nyehqwvrj"]
 
 [ext_resource type="PackedScene" uid="uid://dqgngdmxtt1bg" path="res://Objects/Strukturobjekte/Aufgaben_Grundgeruest/aufgaben_grundgeruest.tscn" id="1_16sp3"]
-[ext_resource type="Script" path="res://Objects/Aufgaben/Analoges_Rechnen_in_2_Schritten/analoges_rechnen_2_schritte_2.gd" id="1_axgm8"]
+[ext_resource type="Script" uid="uid://p5qs20khs37w" path="res://Objects/Aufgaben/Analoges_Rechnen_in_2_Schritten/analoges_rechnen_2_schritte_2.gd" id="1_axgm8"]
 [ext_resource type="Texture2D" uid="uid://nvop5q44dvpl" path="res://Assets/Background/Ufo2.png" id="3_im45k"]
 [ext_resource type="PackedScene" uid="uid://1jg2htq1b20n" path="res://Objects/Strukturobjekte/Eingabefelder/eingabefeld.tscn" id="3_sgf6u"]
 [ext_resource type="Theme" uid="uid://pvywg5bjxo2y" path="res://Theme/label.tres" id="4_5yupu"]
@@ -34,7 +34,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[node name="AnalogesRechnen2Schritte_2" type="Control"]
+[node name="AnalogesRechnen2Schritte_2" type="Control" unique_id=735128896]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,16 +43,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_axgm8")
 
-[node name="Aufgaben_Grundgeruest" parent="." instance=ExtResource("1_16sp3")]
+[node name="Aufgaben_Grundgeruest" parent="." unique_id=200929552 instance=ExtResource("1_16sp3")]
 layout_mode = 1
 
-[node name="Grafiken" type="Control" parent="."]
-layout_mode = 3
+[node name="Grafiken" type="Control" parent="." unique_id=1999058858]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Ufo" type="TextureRect" parent="Grafiken"]
+[node name="Ufo" type="TextureRect" parent="Grafiken" unique_id=1232208761]
 layout_mode = 0
 offset_left = 1650.0
 offset_top = 150.0
@@ -62,7 +61,7 @@ texture = ExtResource("3_im45k")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Sternchen1" type="TextureRect" parent="Grafiken"]
+[node name="Sternchen1" type="TextureRect" parent="Grafiken" unique_id=1329015787]
 layout_mode = 0
 offset_left = 150.0
 offset_top = 331.0
@@ -72,7 +71,7 @@ texture = ExtResource("4_xrve1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Sternchen2" type="TextureRect" parent="Grafiken"]
+[node name="Sternchen2" type="TextureRect" parent="Grafiken" unique_id=201818869]
 layout_mode = 0
 offset_left = 1800.0
 offset_top = 900.0
@@ -82,7 +81,7 @@ texture = ExtResource("4_xrve1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AufgabenPanel" type="Panel" parent="."]
+[node name="AufgabenPanel" type="Panel" parent="." unique_id=832306332]
 layout_mode = 0
 offset_left = 424.0
 offset_right = 1624.0
@@ -90,7 +89,7 @@ offset_bottom = 930.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8tmao")
 
-[node name="RechenfeldOben" type="Panel" parent="AufgabenPanel"]
+[node name="RechenfeldOben" type="Panel" parent="AufgabenPanel" unique_id=715863578]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 400.0
@@ -99,7 +98,7 @@ offset_bottom = 900.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_846ff")
 
-[node name="EingabefeldObenS1" parent="AufgabenPanel/RechenfeldOben" node_paths=PackedStringArray("next") instance=ExtResource("3_sgf6u")]
+[node name="EingabefeldObenS1" parent="AufgabenPanel/RechenfeldOben" unique_id=968893518 node_paths=PackedStringArray("next") instance=ExtResource("3_sgf6u")]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 45.0
@@ -108,7 +107,7 @@ offset_bottom = 205.0
 laenge = 1
 next = NodePath("../EingabefeldObenS3")
 
-[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldOben" unique_id=316173196]
 layout_mode = 0
 offset_left = 348.0
 offset_top = 65.0
@@ -120,7 +119,7 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ObenS2" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+[node name="ObenS2" type="Label" parent="AufgabenPanel/RechenfeldOben" unique_id=558690762]
 layout_mode = 0
 offset_left = 470.0
 offset_top = 45.0
@@ -130,7 +129,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yqb5j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldOben/ObenS2"]
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldOben/ObenS2" unique_id=1349838851]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 160.0
@@ -140,7 +139,7 @@ theme_override_font_sizes/font_size = 120
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldOben"]
+[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldOben" unique_id=1162628510]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 65.0
@@ -152,7 +151,7 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EingabefeldObenS3" parent="AufgabenPanel/RechenfeldOben" node_paths=PackedStringArray("next") instance=ExtResource("3_sgf6u")]
+[node name="EingabefeldObenS3" parent="AufgabenPanel/RechenfeldOben" unique_id=128472546 node_paths=PackedStringArray("next") instance=ExtResource("3_sgf6u")]
 layout_mode = 0
 offset_left = 802.0
 offset_top = 45.0
@@ -162,7 +161,7 @@ laenge = 1
 next = NodePath("../../RechenfeldUnten/EingabefeldUntenS3")
 aktualisiere_Anzeige = true
 
-[node name="RechenfeldUnten" type="Panel" parent="AufgabenPanel"]
+[node name="RechenfeldUnten" type="Panel" parent="AufgabenPanel" unique_id=1520638566]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 650.0
@@ -171,7 +170,7 @@ offset_bottom = 900.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6j43d")
 
-[node name="UntenS1" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+[node name="UntenS1" type="Label" parent="AufgabenPanel/RechenfeldUnten" unique_id=1466331469]
 layout_mode = 0
 offset_left = 108.0
 offset_top = 45.0
@@ -181,7 +180,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yqb5j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldUnten/UntenS1"]
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldUnten/UntenS1" unique_id=848080930]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 190.0
@@ -191,7 +190,7 @@ theme_override_font_sizes/font_size = 120
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+[node name="Rechenzeichen" type="Label" parent="AufgabenPanel/RechenfeldUnten" unique_id=490608062]
 layout_mode = 0
 offset_left = 348.0
 offset_top = 65.0
@@ -203,7 +202,7 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UntenS2" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+[node name="UntenS2" type="Label" parent="AufgabenPanel/RechenfeldUnten" unique_id=326348103]
 layout_mode = 0
 offset_left = 470.0
 offset_top = 45.0
@@ -213,7 +212,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yqb5j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldUnten/UntenS2"]
+[node name="Label" type="Label" parent="AufgabenPanel/RechenfeldUnten/UntenS2" unique_id=1121872790]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 160.0
@@ -223,7 +222,7 @@ theme_override_font_sizes/font_size = 120
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldUnten"]
+[node name="Gleich" type="Label" parent="AufgabenPanel/RechenfeldUnten" unique_id=2143949120]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 65.0
@@ -235,7 +234,7 @@ text = "="
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EingabefeldUntenS3" parent="AufgabenPanel/RechenfeldUnten" instance=ExtResource("3_sgf6u")]
+[node name="EingabefeldUntenS3" parent="AufgabenPanel/RechenfeldUnten" unique_id=1621077139 instance=ExtResource("3_sgf6u")]
 layout_mode = 0
 offset_left = 772.0
 offset_top = 45.0
@@ -243,11 +242,10 @@ offset_right = 932.0
 offset_bottom = 205.0
 laenge = 2
 
-[node name="Zahlbuttons" type="Control" parent="."]
-layout_mode = 3
+[node name="Zahlbuttons" type="Control" parent="." unique_id=343469033]
 anchors_preset = 0
 
-[node name="ZahlButton1" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton1" parent="Zahlbuttons" unique_id=957049051 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 1150.0
@@ -255,7 +253,7 @@ offset_right = 271.0
 offset_bottom = 1310.0
 index = "1"
 
-[node name="ZahlButton2" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton2" parent="Zahlbuttons" unique_id=1999728689 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 296.0
 offset_top = 1150.0
@@ -263,7 +261,7 @@ offset_right = 456.0
 offset_bottom = 1310.0
 index = "2"
 
-[node name="ZahlButton3" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton3" parent="Zahlbuttons" unique_id=535048595 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 481.0
 offset_top = 1150.0
@@ -271,7 +269,7 @@ offset_right = 641.0
 offset_bottom = 1310.0
 index = "3"
 
-[node name="ZahlButton4" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton4" parent="Zahlbuttons" unique_id=627728593 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 666.0
 offset_top = 1150.0
@@ -279,7 +277,7 @@ offset_right = 826.0
 offset_bottom = 1310.0
 index = "4"
 
-[node name="ZahlButton5" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton5" parent="Zahlbuttons" unique_id=2094809062 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 851.0
 offset_top = 1150.0
@@ -287,7 +285,7 @@ offset_right = 1011.0
 offset_bottom = 1310.0
 index = "5"
 
-[node name="ZahlButton6" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton6" parent="Zahlbuttons" unique_id=475526463 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 1036.0
 offset_top = 1150.0
@@ -295,7 +293,7 @@ offset_right = 1196.0
 offset_bottom = 1310.0
 index = "6"
 
-[node name="ZahlButton7" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton7" parent="Zahlbuttons" unique_id=1923987121 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 1221.0
 offset_top = 1150.0
@@ -303,7 +301,7 @@ offset_right = 1381.0
 offset_bottom = 1310.0
 index = "7"
 
-[node name="ZahlButton8" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton8" parent="Zahlbuttons" unique_id=308527297 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 1406.0
 offset_top = 1150.0
@@ -311,7 +309,7 @@ offset_right = 1566.0
 offset_bottom = 1310.0
 index = "8"
 
-[node name="ZahlButton9" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton9" parent="Zahlbuttons" unique_id=234608938 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 1591.0
 offset_top = 1150.0
@@ -319,7 +317,7 @@ offset_right = 1751.0
 offset_bottom = 1310.0
 index = "9"
 
-[node name="ZahlButton10" parent="Zahlbuttons" instance=ExtResource("5_luxmc")]
+[node name="ZahlButton10" parent="Zahlbuttons" unique_id=869474052 instance=ExtResource("5_luxmc")]
 layout_mode = 0
 offset_left = 1776.0
 offset_top = 1150.0
