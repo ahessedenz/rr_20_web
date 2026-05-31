@@ -7,4 +7,7 @@ on:
 jobs:
   deploy:
     uses: ahessedenz/godot-ci/.github/workflows/build-web.yml@main
-    secrets: inherit
+    secrets:
+      BUNNY_STORAGE_API_KEY: ${{ secrets.BUNNY_STORAGE_API_KEY }}
+      BUNNY_STORAGE_HOST: ${{ secrets.BUNNY_STORAGE_HOST }}
+      BUNNY_STORAGE_ZONE: ${{ secrets.BUNNY_STORAGE_ZONE }}
