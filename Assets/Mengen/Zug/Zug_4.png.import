@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Zug_4.png-6570bc49fae74cbb9b4c8c63455ce851.ct
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

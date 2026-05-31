@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Sternenmann2.png-8636809e83990f1d271aba126b14
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

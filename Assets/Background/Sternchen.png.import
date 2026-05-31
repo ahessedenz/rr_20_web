@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Sternchen.png-bf18c6cfd989ef80e61ef8ca2dda3c8
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Ufo2.png-fc58e60518cd3a92eedc3cc6600b39f4.cte
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

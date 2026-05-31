@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Schiff_10.png-5edd8c9c8f68176d0ea2721764fdabf
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

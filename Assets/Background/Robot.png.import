@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Robot.png-b72c9c84a385606f6056fb30a637bfbd.ct
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
